@@ -216,7 +216,7 @@ function archiverContact() {
         afficherListcontact();
 
    
-  } else {
+  } else { 
     alert("Veuillez sélectionner un contact à archiver.");
   }
 }
