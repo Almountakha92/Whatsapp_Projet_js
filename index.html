@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body class="bg-white-100 w-screen h-screen flex items-center justify-center">
+
+
+    <div
+        class="container bg-white w-[900px] h-[600px]  shadow-xl flex text-xl text-gray-700 relative border-t border-gray-300">
+        <div class="h-full w-20 bg-[#F9F7F1]   shadow-lg flex flex-col items-center py-20 space-y-4">
+            <div
+                class="flex flex-col items-center border border-yellow-500 rounded-md p-2 w-16 hover:bg-yellow-100 justify-center">
+                <button id="btnMsg">
+                    <i class='bx  bxs-message'></i>
+                    <span class="text-sm">Messages</span>
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center border border-yellow-500 rounded-md p-2 w-16 hover:bg-yellow-100">
+                <i class='bx  bxs-group'></i>
+                <span class="text-sm">Groupes</span>
+            </div>
+
+            <div class="flex flex-col items-center border border-yellow-500 rounded-md p-2 w-16 hover:bg-yellow-100">
+                <button id="btnDif">
+                    <i class='bx  bxs-arrow-s-right'></i>
+                    <span class="text-sm">Diffusions</span>
+
+                </button>
+
+            </div>
+
+            <div class="flex flex-col items-center border border-yellow-500 rounded-md p-2 w-16 hover:bg-yellow-100">
+                <button id="btnArch">
+                    <i class='bx  bxs-archive-alt'></i>
+                    <span class="text-sm">Archives</span>
+                </button>
+
+            </div>
+
+            <div class="  flex flex-col items-center border border-yellow-500 rounded-md p-2 w-16 hover:bg-yellow-100">
+                <button id="btnAdd">
+                    <i class='bx  bxs-plus'></i>
+                    <span class="text-sm">Nouveau</span>
+                </button>
+
+            </div>
+
+
+        </div>
+        <!-- ============================================================================
+            -->
+
+        <div id="list1"
+            class="bg-gray-100 w-[400px] h-full   bg-white-20  flex-col flex text-xl text-gray-700 relative items-center">
+            <span class="ml-3">Discussions</span>
+            <input type="text" placeholder="Rechercher"
+                class="bg-white-100 w-[370px] ml-3 h-6 border text-sm rounded-md p-2" />
+            <div id="list1contenu" class="bg-gray-100 w-[400px] h-[542px] border border-blue-50 ">
+
+
+            </div>
+
+        </div>
+
+        <!-- =============================================================================     -->
+
+        <div class="relative flex-1 bg-white  ">
+            <div class="top-0 bg-[#dfd7c1] w-full h-10 border-b-2 border-[#fcfbf8] flex items-center justify-end ">
+                <div class="w-[30px] h-[30px] border border-gray-400 rounded-full absolute left-2 bg-gray-500 "></div>
+                <div class="flex gap-2 mr-2">
+                    <button
+                        class="w-[30px] h-[30px] border border-orange-600 rounded-full items-center justify-center flex">
+                        <i class="fa-solid fa-delete-left text-orange-600"></i>
+                    </button>
+                    <button id="btnArchive"
+                        class="w-[30px] h-[30px] border border-gray-400 rounded-full items-center justify-center flex">
+                        <i class="fa-solid fa-box-archive text-gray-400"></i>
+                    </button>
+                    <button class="w-[30px] h-[30px] border border-black rounded-full items-center justify-center flex">
+                        <i class='bx  bxs-checkbox' style='color:#040505'></i> </button>
+                    <button
+                        class="w-[30px] h-[30px] border border-red-600 rounded-full items-center justify-center flex">
+                        <i class="fa-solid fa-trash text-red-600"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class=" bg-[#dfd7c1]  w-full h-[510px] "></div>
+            <div class="top-0 bg-[#ffffff] w-full h-10 flex  items-center justify-around">
+
+                <input type="text" class="w-[400px] h-[30px] rounded-xl bg-gray-200">
+                <button class="w-[40px] h-[40px] border rounded-full bg-green-500 items-center justify-center flex">
+                    <i class='bx  bxs-arrow-right-stroke' style='color:#e9f4ea'></i>
+                </button>
+
+            </div>
+
+
+            <!-- ============================================================================== -->
+
+
+
+            <!-- ========================INTERFACE ICI==================== -->
+            <div id="interface" class="hidden bg-gray-50 overflow-hidden w-[400px] h-[542px] ">
+                <div class=" bg-white min-h-screen">
+
+                    <div id="nd" class="bg-teal-600 text-white p-4 flex items-center">
+                        <svg class="w-6 h-6 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                        <h1 class="text-lg font-medium">Nouvelle discussion</h1>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="bg-gray-100 p-4">
+                        <div class="flex items-center bg-white rounded-lg px-4 py-2 shadow-sm">
+                            <svg class="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                            <input type="text" placeholder="Rechercher un nom ou un numéro"
+                                class="flex-1 outline-none text-gray-600 text-sm">
+                        </div>
+                    </div>
+
+                    <!-- Action Items -->
+                    <div class="bg-white">
+                        <!--=============================================== Nouveau groupe================================================================= -->
+                        <div class="flex items-center p-4 hover:bg-gray-50">
+                            <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.5-4.5L17.5 16H20v6h4zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zm1.5 1.5h-3c-.83 0-1.5.67-1.5 1.5v6h6v-6c0-.83-.67-1.5-1.5-1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2 2h-4C2.67 8 2 8.67 2 9.5v7h8v-7c0-.83-.67-1.5-1.5-1.5z" />
+                                </svg>
+                            </div>
+                            <button id="btngrp">
+                                <span class="text-gray-900 text-base">Nouveau groupe</span>
+
+                            </button>
+
+                        </div>
+
+                        <!-- ===================POUR NOUVEAU CONTACT======================= -->
+                        <div class="flex items-center p-4 hover:bg-gray-50">
+                            <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V8c0-.55-.45-1-1-1s-1 .45-1 1v2H2c-.55 0-1 .45-1 1s.45 1 1 1h2v2c0 .55.45 1 1 1s1-.45 1-1v-2h2c.55 0 1-.45 1-1s-.45-1-1-1H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                            <button id="newcontact">
+                                <span class="text-gray-900 text-base">Nouveau contact</span>
+
+                            </button>
+                        </div>
+
+                        <!-- =========================POUR  NOUVELLE COMMUNAUTÉ============================ -->
+                        <div class="flex items-center p-4 hover:bg-gray-50">
+                            <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                                    <circle cx="9" cy="9" r="4" />
+                                    <path
+                                        d="M15.5 12.5c1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5S13 8.62 13 10s1.12 2.5 2.5 2.5z" />
+                                </svg>
+                            </div>
+                            <span class="text-gray-900 text-base">Nouvelle communauté</span>
+                        </div>
+                    </div>
+                    <!-- ===================================FORMULAIRE======================== -->
+                    <div id="formulaire"
+                        class="hidden w-full h-full border rounded-md  justify-center items-center flex-col gap-4">
+                        <div class="items-center">
+                            <i class='bx  bx-arrow-left-stroke' style='color:#9aa19b'></i>
+                            <span>
+                                ajouter contact
+                            </span>
+                            <small id="errorMsg" class=" flex left-3 mt-2 text-red-500">Tous les champs sont
+                                obligatoires</small>
+                        </div>
+
+                        <div class="w-[180px] h-[35px]  border-b-2 border-green-500 overflow-hidden">
+                            <input id="inputP" type="text"  placeholder="Prenom"
+                                class="w-[180px] bg-gray-100 h-[35px] outline-none rounded-xl  p-2">
+                        </div>
+
+                        <div class="w-[180px] h-[35px]  border-b-2 border-green-500 overflow-hidden">
+                            <input id="inputN" placeholder="Nom" type="text"
+                                class="w-[150px] h-[35px] bg-gray-100 outline-none   p-2">
+                        </div>
+
+                        <div class="w-[180px] h-[35px]  border-b-2 border-green-500 overflow-hidden">
+                            <small id="isnum" class="flex left-3 mt-2 text-red-500">Invalid number</small>
+                            <input id="inputT" placeholder="Telephone" type="text"
+                                class="w-[150px] h-[35px] outline-none bg-gray-100  p-2">
+                        </div>
+                        <button type="button" id="save" class="bg-green-500 rounded-md text-sm">Enregistrer</button>
+                    </div>
+                                
+                    
+                    <div id="listeContacts" class="hidden w-full  flex-col items-center"> </div>
+
+                    <!-- ==========================CREER GROUPE======================== -->
+                   
+                       <div id="ajoutgrp" class="ajoutgrp bg-white w-full h-full  flex-col hidden">
+                        <div class="flex px-4 py-4 border-b border-gray-200">
+                            <svg class="w-6 h-6 text-gray-700 mr-4 cursor-pointer" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                            </svg>
+                           <h1 class="text-lg font-medium text-gray-900">
+                                Ajouter des membres au groupe
+                            </h1>
+                        </div>
+
+                        <div class="px-4 py-6">
+                            <div class="relative">
+                                <input type="text" id="searchInput" placeholder="Rechercher un nom ou un numéro"
+                                    class="w-full px-4 py-3 text-gray-600 placeholder-gray-400 border-b-2 border-gray-200 focus:border-green-500 focus:outline-none bg-transparent" />
+                            </div>
+
+                            <!-- Symbole # -->
+                            <div class="mt-8">
+                                <span class="text-2xl text-green-500 font-light">#</span>
+                                <div id="contenance" class="mt-2   rounded-lg p-4">
+
+                                </div>
+                                <div id="showbtn" class="hidden items-center justify-center mt-40">
+                                    
+                                <button id="btncreategrp" class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                                        <i class='bx  bxs-arrow-right-stroke' style='color:#e9f4ea'></i>
+
+                                </button>
+
+                                </div>
+                            </div>
+                        </div>
+                            
+                    </div>
+                    <!-- ======================================================================= -->
+                </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="./src/main.js"></script>
+</body>
+
+</html>
