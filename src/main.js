@@ -39,7 +39,7 @@ function afficherInterface() {
   interface.classList.remove("hidden");
   interface.classList.add("flex");
 }
-  
+  console.log("mangui koyy guiss")
 
 btnAdd.addEventListener('click', afficherInterface);
 
