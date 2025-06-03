@@ -251,6 +251,74 @@
                             
                     </div>
                     <!-- ======================================================================= -->
+                     <div id="grpname" class="hidden bg-gray-100   w-[400px] h-[350px] ">
+                        <div class="max-w-md mx-auto bg-white">
+        
+        <div class="bg-teal-500 text-white items-center ">
+            <button class="">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <h1 class="text-lg font-medium">Nouveau groupe</h1>
+        </div>
+
+       
+        <div class="px-6 py-8 bg-white">
+            
+            <div class="flex justify-center mb-6">
+                <div class="w-32 h-32 bg-gray-500 rounded-full flex flex-col items-center justify-center text-white text-center">
+                    <div class="w-8 h-8 border-2 border-white rounded mb-2 flex items-center justify-center">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <div class="text-xs leading-tight">
+                        <div>AJOUTER UNE</div>
+                        <div>ICÔNE AU</div>
+                        <div>GROUPE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative">
+                <input id="nomGroupe"
+                    type="text" 
+                    placeholder="Sujet du groupe (facultatif)"
+                    class="w-full pb-2 text-gray-700 placeholder-gray-400 border-b-2 border-teal-500 focus:outline-none focus:border-teal-600 text-base"
+                >
+                <div class="absolute right-2 top-1/2 transform -translate-y-1/2">
+                    <span class="emoji-icon"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gray-50 px-6 py-4">
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div>
+                    <div class="text-gray-800 text-base">Messages éphémères</div>
+                    <div class="text-gray-500 text-sm">Non</div>
+                </div>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <div class="flex items-center justify-between py-4">
+                <div class="text-gray-800 text-base">Autorisations du groupe</div>
+                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="flex absolute right-1 w-(200px) h-(30px) ">
+            <button id="btnvalidgroup" class="w-14 h-14 bg-teal-500 rounded-full shadow-lg flex items-center justify-center hover:bg-teal-600 transition-colors">
+                <span class="check-icon text-white text-xl font-bold">✓</span>
+            </button>
+        </div>
+    </div>
+                     </div>
                 </div>
 
 
@@ -258,8 +326,8 @@
 
             </div>
         </div>
-    </div>
-    <script src="./src/main.js"></script>
+    
+    <script src="/main.js"></script>
 </body>
 
 </html>

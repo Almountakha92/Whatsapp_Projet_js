@@ -20,6 +20,8 @@ const list1contenu=document.querySelector("#list1contenu")
 const contenance= document.querySelector("#contenance");
 const showbtn= document.querySelector("#showbtn");
 const btncreategrp= document.querySelector("#btncreategrp");
+const grpname=document.querySelector("#grpname")
+const btnvalidgrp= document.querySelector("#btnvalidgrp");
 
 
 const tabUsers = [];
@@ -231,10 +233,7 @@ function creerGroupe() {
   ajoutgrp.classList.add("flex");
   list1contenu.appendChild(ajoutgrp);
   showbtn.classList.add('hidden');
-
-
-  let contactsSelectionnes = [];
-
+  window.contactsSelectionnesPourGroupe = [];
   if (tabUsers.length > 0) {
     contenance.innerHTML = "";
     tabUsers.forEach((contact, index) => {
@@ -244,12 +243,12 @@ function creerGroupe() {
       contactDiv.addEventListener('click', () => {
         if (contactDiv.classList.contains('border-2')) {
           contactDiv.classList.remove('border-2', 'border-teal-500', 'bg-teal-50');
-          contactsSelectionnes = contactsSelectionnes.filter(i => i !== index);
+          window.contactsSelectionnesPourGroupe = window.contactsSelectionnesPourGroupe.filter(i => i !== index);
         } else {
           contactDiv.classList.add('border-2', 'border-teal-500', 'bg-teal-50');
-          contactsSelectionnes.push(index);
+          window.contactsSelectionnesPourGroupe.push(index);
         }
-        if (contactsSelectionnes.length > 0) {
+        if (window.contactsSelectionnesPourGroupe.length > 0) {
           showbtn.classList.remove('hidden');
           showbtn.classList.add('flex');
         } else {
@@ -263,10 +262,28 @@ function creerGroupe() {
     contenance.innerHTML = "<div class='text-gray-500 p-2'>Aucun contact à ajouter au groupe.</div>";
   }
 }
+
+function creerGroupeFinal() {
+  if (!window.contactsSelectionnesPourGroupe || window.contactsSelectionnesPourGroupe.length === 0) {
+    alert("Veuillez sélectionner au moins un contact pour créer un groupe.");
+    return;
+  }
+  grpname.classList.remove("hidden");
+  grpname.classList.add('flex');
+  ajoutgrp.classList.remove('flex');
+  ajoutgrp.classList.add('hidden');
+  list1contenu.appendChild(grpname);
+}
+
+
+
+
+
+
 btnAddcontact.addEventListener('click', creerContact);
 newcontact.addEventListener('click', afficherFormulaire);
 btnMsg.addEventListener('click', afficherListcontact);
 btnArchive.addEventListener('click', archiverContact);
 archives.addEventListener('click', afficherArchives);
 btngroup.addEventListener('click', creerGroupe);
-
+btncreategrp.addEventListener('click', creerGroupeFinal);
