@@ -102,7 +102,6 @@ function afficherListcontact() {
   listeContacts.classList.remove("hidden");
   listeContacts.classList.add("flex");
   ajoutgrp.classList.add("hidden");
-   grpname.classList.remove("flex");
   grpname.classList.add("hidden");
 
 
@@ -175,6 +174,8 @@ function afficherArchives() {
   formulaire.classList.add("hidden");
   formulaire.classList.remove("flex");
   interface.classList.add("hidden");
+  ajoutgrp.classList.add("hidden");
+  grpname.classList.add("hidden");
 
 
   if (contactarchives.length === 0) {
