@@ -102,6 +102,9 @@ function afficherListcontact() {
   listeContacts.classList.remove("hidden");
   listeContacts.classList.add("flex");
   ajoutgrp.classList.add("hidden");
+   grpname.classList.remove("flex");
+  grpname.classList.add("hidden");
+
 
   listeContacts.innerHTML = ""; // Vide la liste avant d'ajouter
 
